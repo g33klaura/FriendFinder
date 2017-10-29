@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Packages to accompany FriendFinder web app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g33klaura/FriendFinder.git"
+  },
+  "author": "Laura Boetcher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g33klaura/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/g33klaura/FriendFinder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "path": "^0.12.7"
+  }
+}
