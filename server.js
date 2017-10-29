@@ -25,7 +25,7 @@ const path = require('path');
 // EXPRESS SETUP ========================================
 // 
 
-const app = express();
+let app = express();
 const PORT = process.env.PORT || 8080;
 
 // Setup for Express to handle data parsing
@@ -34,30 +34,17 @@ app.use(bodyParser.json());
 
 
 // ROUTING SETUP ========================================
-// 
+// The below points our server to a series of "route" files.
+// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 
-require('./app/routing/apiRoutes')(app);
-require('./app/routing/htmlRoutes')(app);
+// require('./app/routing/apiRoutes.js')(app);
+// require('./app/routing/htmlRoutes.js')(app);
 
 
 // LISTENER ========================================
 //
 
-// 'Starts' the server
+// 'Starts' the server  ~WORKS
 app.listen(PORT, function() {
 	console.log('App listening on PORT: ' + PORT);
 });
-
-
-// VARIABLES ========================================
-// 
-
-
-
-// FUNCTIONS ========================================
-//
-
-
-
-// MAIN PROCESS ========================================
-// 
