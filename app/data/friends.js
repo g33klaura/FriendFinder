@@ -37,7 +37,7 @@ let friendsArray = [
   {
     name: 'Kif Kroker',
     photo: 'https://iparallax.files.wordpress.com/2013/12/futurama_kif_kroker.png?quality=100&width=650',
-    // Added quality and width after the fact ~ not sure if it works
+    // Added quality and width after the fact ~ not sure if it works ~Does NOT work. Image is mega huge.
     scores: [
       4,
       3,
