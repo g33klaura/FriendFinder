@@ -13,12 +13,80 @@
 	<!-- Materialize Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-	<!-- My CSS Stylesheet -->
-	<!-- <link rel="stylesheet" type="text/css" href="assets/css/zazz.css"> -->
+	<style type="text/css">
+		html {
+			background: url('https://vignette.wikia.nocookie.net/en.futurama/images/4/4c/FUTURAMA-BACKGROUND-small.jpg/revision/latest?cb=20160812075819') no-repeat center center fixed;
+			-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
+		}
+		h1 {
+			font-weight: 600;
+		}
+		h5, h6 {
+			color: white;
+		}
+	</style>
+
 </head>
 <body>
 
 	<!-- This page will hold survey elements then POST user inputs -->
+
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+
+				<h1 class="center-align red-text text-darken-1">Survey Questions</h1>
+			
+				<div class="divider"></div>
+				<div class="section">
+					<h5>About You</h5>
+
+					<!-- Form with questions -->
+					<div class="form">
+					
+					<div class="row">
+						<div class="col s12"> <!-- This column div needs to hold the ENTIRE form -->
+							
+							<!-- Name and picture inputs -->
+							<div class="row">
+								<div class="input-field col s6">
+          				<input placeholder="" id="name" type="text" class="validate">
+          				<label for="name">Your Name (Required)</label>
+        				</div>
+        				<div class="input-field col s6">
+          				<input placeholder="" id="photo" type="text" class="validate">
+          				<label for="photo">Your Photo (Required)</label>
+        				</div>
+							</div>
+
+							<!-- Question dropdowns -->
+							<div class="row">
+								<div class="input-field col s6">
+							    <select>
+							      <option value="" disabled selected>Choose your option</option>
+							      <option value="1">Option 1</option>
+							      <option value="2">Option 2</option>
+							      <option value="3">Option 3</option>
+							    </select>
+							    <label>Materialize Select</label>
+							  </div>
+							</div>
+
+						</div>
+					</div>
+
+					</div> <!-- Closes form div -->
+				</div> <!-- Closes section div -->
+				
+
+			</div>
+		</div>
+	</div>
+
+
 
 
 	<!-- ========== SCRIPT TAGS ========== -->
