@@ -266,12 +266,17 @@
   		// Use in clearing form on submit click
     	var select = $('select');
 
+    	// Survey submit button ==========================
+    	// ===============================================
 			$('#submit').on('click', function() {
 				// Prevent page from refreshing
 				event.preventDefault;
 
 				// console.log('Submit clicked');
 				
+				// Grabs form elements and sets to new object
+				// SHOULD THIS BE PART OF A CONSTRUCTOR THO?...
+				// something like let newFriendSurvey = new Friend; ********
 				let newFriendSurvey = {
       		name: $('#name').val().trim(),
       		photo: $('#photo').val().trim(),
@@ -299,16 +304,14 @@
       		} else {
       			console.log('Data unsuccessful');  //Right?
       		}
-      	
-	      	// Clear Survey ==========================
+	      	// Clear won't work in this block
+      	});
+
+      // Clear Survey ==========================
 	      	$('input').val('');
 
 	      	select.prop('selectedIndex', 0);
 	      	select.material_select();
-	      	// This was just outside the post, just below
-      	});
-
-      // Clear was here
 			});
 
 			select.material_select();
