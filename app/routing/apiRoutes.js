@@ -3,7 +3,7 @@
 // REQUIREMENTS ========================================
 // 
 
-let friendsData = require('../data/friends.js');
+let friends = require('../data/friends');
 
 
 
@@ -20,7 +20,7 @@ module.exports = function(app) {
 
   // THIS NAME OK???
   app.get('/api/friends', function(req, res) {
-  	res.json(friendsData);
+  	res.json(friends);
   });
 
   // API POST Requests
@@ -32,7 +32,7 @@ module.exports = function(app) {
   // ---------------------------------------------------------------------------
 
   app.post('/api/friends', function(req, res) {
-  	friendsData.push(req.body);
+  	friends.push(req.body);
 
   	// Will friend matching happen here??????
   });
