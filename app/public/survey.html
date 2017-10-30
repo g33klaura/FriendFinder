@@ -53,12 +53,12 @@
 							<!-- Name and picture inputs -->
 							<div class="row">
 								<div class="input-field col s6">
-          				<input placeholder="" id="name" type="text" class="questions validate">
-          				<label for="name">Your Name (Required)</label>
+          				<input placeholder="" id="name" type="text" class="validate lime-text text-accent-2">
+          				<label for="name" class="red-text text-darken-1">Your Name (Required)</label>
         				</div>
         				<div class="input-field col s6">
-          				<input placeholder="" id="photo" type="text" class="questions validate">
-          				<label for="photo">Link to Your Photo (Required)</label>
+          				<input placeholder="" id="photo" type="text" class="validate lime-text text-accent-2">
+          				<label for="photo" class="red-text text-darken-1">Link to Your Photo (Required)</label>
         				</div>
 							</div>
 
@@ -67,7 +67,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 1: What was your dream job growing up?</h6>
-							    <select class="questions" id="q1">
+							    <select class="lime-text text-accent-2" id="q1">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Celebrity chef</option>
 							      <option value="2">Doctor</option>
@@ -82,7 +82,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 2: What food could you live on forever?</h6>
-							    <select class="questions" id="q2">
+							    <select class="lime-text text-accent-2" id="q2">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Seafood</option>
 							      <option value="2">Soylent green</option>
@@ -97,7 +97,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 3: Where is your favorite vacation spot?</h6>
-							    <select class="questions" id="q3">
+							    <select class="lime-text text-accent-2" id="q3">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Tijuana</option>
 							      <option value="2">Amphibios 9</option>
@@ -112,7 +112,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 4: What is your best feature?</h6>
-							    <select class="questions" id="q4">
+							    <select class="lime-text text-accent-2" id="q4">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Cuteness</option>
 							      <option value="2">Shiny metal ass</option>
@@ -127,7 +127,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 5: On a Friday night, what are you most likely doing?</h6>
-							    <select class="questions" id="q5">
+							    <select class="lime-text text-accent-2" id="q5">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Interviewing puny humans</option>
 							      <option value="2">Taking a nap</option>
@@ -142,7 +142,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 6: How do you solve problems?</h6>
-							    <select class="questions" id="q6">
+							    <select class="lime-text text-accent-2" id="q6">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">With violence</option>
 							      <option value="2">With drinking</option>
@@ -157,7 +157,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 7: What is your favorite movie?</h6>
-							    <select class="questions" id="q7">
+							    <select class="lime-text text-accent-2" id="q7">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Mars Attacks</option>
 							      <option value="2">Terminator 2</option>
@@ -172,7 +172,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 8: Which Simpsons character would you hang out with?</h6>
-							    <select class="questions" id="q8">
+							    <select class="lime-text text-accent-2" id="q8">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Otto</option>
 							      <option value="2">Montgomery Burns</option>
@@ -187,7 +187,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 9: Pick a pet.</h6>
-							    <select class="questions" id="q9">
+							    <select class="lime-text text-accent-2" id="q9">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">A puppy</option>
 							      <option value="2">A guinea pig</option>
@@ -202,7 +202,7 @@
 							<div class="row">
 								<div class="input-field col s12">
 									<h6>Question 10: What is your favorite kind of music?</h6>
-							    <select class="questions" id="q10">
+							    <select class="lime-text text-accent-2" id="q10">
 							      <option value="" disabled selected>Select one</option>
 							      <option value="1">Showtunes</option>
 							      <option value="2">Whale songs</option>
@@ -257,7 +257,8 @@
 			// Initialize Materialize drop-down menus
     	$('select').material_select();
   	
-  	
+    	// $('.dropdown-content>li>a').css('color', 'lime');
+
   		// Use in clearing form on submit click
     	var select = $('select');
 
