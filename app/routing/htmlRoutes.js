@@ -3,10 +3,11 @@
 // DEPENDENCIES ========================================
 // 
 
-const path = require('path');  //Built-in method, not npm package
+const path = require('path');  
+//Built-in method, not npm package
 
 
-// ROUTING ========================================
+// ROUTING =============================================
 //
 
 module.exports = function(app) {
