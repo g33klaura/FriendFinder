@@ -302,21 +302,30 @@
       		$('#q7').val(),
       		$('#q8').val(),
       		$('#q9').val(),
-      		$('#q10').val() ]
+      		$('#q10').val() 
+      		]
       	};
+
+      	// Attempting to log answers as integers rather than strings...
+      	for (var i = 0; i < newFriendSurvey.scores.length; i++) {
+      		// Need to use parseInt()........
+      	let scores = parseInt(newFriendSurvey.scores[i]);
+      	console.log(scores);
+      	}
 
       	console.log(newFriendSurvey);
 
       	// POST Request ==========================
       	// Linked code in apiRoutes.js**
       	$.post('/api/friends', newFriendSurvey, function(data) {
+      		
       		if (data) {
-      			console.log('Survey logged successfully');
+      			console.log('Survey logged successfully');  //Haven't seen this message yet
       			// Will modal trigger here?
       		} else {
       			console.log('Data unsuccessful');  //Right?
       		}
-	      	// Clear won't work in this block
+	      	// Clear won't work in this block; keep below
       	});
 
       // Clear Survey ==========================

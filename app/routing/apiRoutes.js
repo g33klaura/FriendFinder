@@ -15,9 +15,8 @@ module.exports = function(app) {
 	// In each of the below cases when a user visits a link
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // -----------------------------------------------------------
-  // ^^^Edit explaination when working**********
+  // ^^^Edit explaination once working**********
 
-  // THIS NAME OK???
   app.get('/api/friends', function(req, res) {
   	res.json(friends);
   });
@@ -37,10 +36,23 @@ module.exports = function(app) {
     // Needs to compare newly entered scores with exisiting friends scores
     // Modulus doesn't do the math correctly each time...
     // Need 5-3 & 3-5 = 2......
+    // Math.abs() to the rescue!
+
+    // compareFriends();
 
   });
 };
 
 
-// MAIN PROCESS ========================================
+// FUNCTIONS ========================================
 // 
+
+// function compareFriends() {
+
+//   for (var i = 0; i < friends.length; i++) {
+    
+//     console.log(friends[i]);
+//     // ^^See if this gets in there...
+//   }
+
+// }
