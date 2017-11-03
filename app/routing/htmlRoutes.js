@@ -3,8 +3,7 @@
 // DEPENDENCIES ========================================
 // 
 
-const path = require('path');  
-//Built-in method, not npm package
+const path = require('path');
 
 
 // ROUTING =============================================
@@ -18,7 +17,7 @@ module.exports = function(app) {
   	res.sendFile(path.join(__dirname, '../public/survey.html'));
   });
 
-  // Defaults to home if not matching route is found
+  // Defaults to home if no matching route is found
   app.get('*', function(req, res) {
   	res.sendFile(path.join(__dirname, '../public/home.html'));
   });
