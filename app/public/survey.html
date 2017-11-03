@@ -315,9 +315,13 @@
 
       	console.log(newFriendSurvey);
 
+      	// Wonder if add the new scores variable to the post request, if that'll keep the numbers as integers and not strings.........
+
+
       	// POST Request ==========================
       	// Linked code in apiRoutes.js**
       	$.post('/api/friends', newFriendSurvey, function(data) {
+      		// ^^^^ CHECK THE CALLBACL OF DATA HERE
       		
       		if (data) {
       			console.log('Survey logged successfully');  //Haven't seen this message yet
