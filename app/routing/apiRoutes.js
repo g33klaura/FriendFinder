@@ -26,11 +26,13 @@ module.exports = function(app) {
   app.post('/api/friends', function(req, res) {
   	
     friendsData.push(req.body);
-    // Not sure if "friendsData" is right here....
 
     // save the req.body to new var
+    // forget why.....
+    let surveyInputs = req.body;
 
-
+    // console.log('surveyInputs: ' + surveyInputs);
+    // ^^Just is [object Object]....
 
 
   	// Will friend matching happen here?????? ~YES
@@ -39,7 +41,7 @@ module.exports = function(app) {
     // Math.abs() to the rescue!
 
     console.log('compareFriends called from apiRoutes');  //This gets triggered
-    
+
     compareFriends();
     
 
@@ -52,12 +54,14 @@ module.exports = function(app) {
 
 function compareFriends() {
 
-  for (var i = 0; i < friendsData.length; i++) {
+  for (var i = 0; i < (friendsData.length -1); i++) {
     
     console.log("------------------------------------");
-    console.log('friendsData in compareFriends()');
-    console.log(friendsData[i]);
-    // ^^See if this gets in there...
+    // console.log('friendsData in compareFriends()');
+    // console.log(friendsData[i]);
+    // ^^See if this gets in there... ~YES
+    console.log(friendsData[i].name);
+    console.log(friendsData[i].scores);
   }
 
 }
