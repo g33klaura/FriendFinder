@@ -321,10 +321,12 @@
 
       	// POST Request ==========================
       	// Linked code in apiRoutes.js**
-      	$.post('/api/friends', newFriendSurvey, function(data) {
+      	// SHould this actually be happening in the API Routes file... if so, how is this triggered with the survey submit??******
+      	$.post('/api/friends', newFriendSurvey, function(req, res) {
       		// ^^^^ CHECK THE CALLBACL OF DATA HERE
+      		// changed from just (data) to (req, res) 11/3
       		
-      		if (data) {
+      		if (res) {
       			console.log('Survey logged successfully');  //Haven't seen this message yet
       			// Will modal trigger here?
       		} else {
