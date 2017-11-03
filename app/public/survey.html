@@ -281,14 +281,13 @@
     	// Survey submit button ==========================
     	// ===============================================
 			$('#submit').on('click', function() {
+				
 				// Prevent page from refreshing
 				event.preventDefault;
 
 				// console.log('Submit clicked');
 				
 				// Grabs form elements and sets to new object
-				// SHOULD THIS BE PART OF A CONSTRUCTOR THO?...
-				// something like let newFriendSurvey = new Friend; ********
 				let newFriendSurvey = {
       		name: $('#name').val().trim(),
       		photo: $('#photo').val().trim(),
@@ -306,34 +305,54 @@
       		]
       	};
 
-      	// Attempting to log answers as integers rather than strings...
-      	// for (var i = 0; i < newFriendSurvey.scores.length; i++) {
-      		// Need to use parseInt()........
-      	// let scores = parseInt(newFriendSurvey.scores[i]);
-      	// console.log(scores);
-      	// }
-      	// ^^^SOLUTION: Add parseInt for each input value!! 
-
       	console.log(newFriendSurvey);
 
-      	// Wonder if add the new scores variable to the post request, if that'll keep the numbers as integers and not strings.........
+      	// 2nd attempt
+      	// POST Request as grabbed by jQuery ==========================
+      	$.post('/api/friends', newFriendSurvey);
+
+      	// from tables.html example in 16-HotRestaurant
+      	runFriendQuery();
+
+      	function runFriendQuery() {
+      		let currentURL = window.location.origin;
+
+      		$.ajax({ url: currentURL + '/api/friends', method: 'GET' })
+      		.done(function(friendsData) {
+      			console.log("------------------------------------");
+        		console.log("URL: " + currentURL + "/api/friends");
+        		console.log("------------------------------------");
+      		
+        		console.log(friendsData);
+        		console.log("------------------------------------");
+
+        		// See if this works so far
+        		// Continues line 92 in tables.html
+        		// ##################################
+        		compareFriends();
+        		console.log('compareFriends called from survey.html');
+        		// ^^To call function from apiRoutes.js???
+        		// Doesn't get triggered, but form data does log
+      		});
+      	}
 
 
-      	// POST Request ==========================
+      	// 1st attempt
+      	// POST Request as grabbed by jQuery ==========================
       	// Linked code in apiRoutes.js**
       	// SHould this actually be happening in the API Routes file... if so, how is this triggered with the survey submit??******
-      	$.post('/api/friends', newFriendSurvey, function(req, res) {
-      		// ^^^^ CHECK THE CALLBACL OF DATA HERE
-      		// changed from just (data) to (req, res) 11/3
+
+      	// $.post('/api/friends', newFriendSurvey, function(data) {
+      		// jQuery docs say to set callback as (data)...
       		
-      		if (res) {
-      			console.log('Survey logged successfully');  //Haven't seen this message yet
+      		// if (data) {
+      		// 	alert('Survey logged successfully');  //Haven't seen this message yet
       			// Will modal trigger here?
-      		} else {
-      			console.log('Data unsuccessful');  //Right?
-      		}
+      		// } else {
+      			// alert('Data unsuccessful');  //Right?
+      		// }
 	      	// Clear won't work in this block; keep below
-      	});
+      	// });
 
       // Clear Survey ==========================
 	      	$('input').val('');
@@ -342,7 +361,8 @@
 	      	select.material_select();
 			});
 
-			select.material_select();
+			// select.material_select();
+			// ^^Still clears w/o this on... don't get $.post alerts
 
 
 			// Modal initialization ***Not sure if this'll go in the on-click of submit********

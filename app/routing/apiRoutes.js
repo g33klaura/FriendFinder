@@ -3,7 +3,7 @@
 // REQUIREMENTS ========================================
 // 
 
-let friends = require('../data/friends');
+let friendsData = require('../data/friends.js');
 const path = require('path');
 
 
@@ -18,14 +18,15 @@ module.exports = function(app) {
 
     // app.get(path.join(__dir) )
 
-  	res.json(friends);
+  	res.json(friendsData);
   });
 
 
   // API POST Requests
   app.post('/api/friends', function(req, res) {
   	
-    friends.push(req.body);
+    friendsData.push(req.body);
+    // Not sure if "friendsData" is right here....
 
     // save the req.body to new var
 
@@ -34,11 +35,13 @@ module.exports = function(app) {
 
   	// Will friend matching happen here?????? ~YES
     // Needs to compare newly entered scores with exisiting friends scores
-    // Modulus doesn't do the math correctly each time...
-    // Need 5-3 & 3-5 = 2......
+
     // Math.abs() to the rescue!
 
-    // compareFriends();
+    console.log('compareFriends called from apiRoutes');  //This gets triggered
+    
+    compareFriends();
+    
 
   });
 };
@@ -47,12 +50,14 @@ module.exports = function(app) {
 // FUNCTIONS ========================================
 // 
 
-// function compareFriends() {
+function compareFriends() {
 
-//   for (var i = 0; i < friends.length; i++) {
+  for (var i = 0; i < friendsData.length; i++) {
     
-//     console.log(friends[i]);
-//     // ^^See if this gets in there...
-//   }
+    console.log("------------------------------------");
+    console.log('friendsData in compareFriends()');
+    console.log(friendsData[i]);
+    // ^^See if this gets in there...
+  }
 
-// }
+}
