@@ -293,25 +293,26 @@
       		name: $('#name').val().trim(),
       		photo: $('#photo').val().trim(),
       		scores: [
-      		$('#q1').val(),
-      		$('#q2').val(),
-      		$('#q3').val(),
-      		$('#q4').val(),
-      		$('#q5').val(),
-      		$('#q6').val(),
-      		$('#q7').val(),
-      		$('#q8').val(),
-      		$('#q9').val(),
-      		$('#q10').val() 
+      		parseInt($('#q1').val()),
+      		parseInt($('#q2').val()),
+      		parseInt($('#q3').val()),
+      		parseInt($('#q4').val()),
+      		parseInt($('#q5').val()),
+      		parseInt($('#q6').val()),
+      		parseInt($('#q7').val()),
+      		parseInt($('#q8').val()),
+      		parseInt($('#q9').val()),
+      		parseInt($('#q10').val()) 
       		]
       	};
 
       	// Attempting to log answers as integers rather than strings...
-      	for (var i = 0; i < newFriendSurvey.scores.length; i++) {
+      	// for (var i = 0; i < newFriendSurvey.scores.length; i++) {
       		// Need to use parseInt()........
-      	let scores = parseInt(newFriendSurvey.scores[i]);
-      	console.log(scores);
-      	}
+      	// let scores = parseInt(newFriendSurvey.scores[i]);
+      	// console.log(scores);
+      	// }
+      	// ^^^SOLUTION: Add parseInt for each input value!! 
 
       	console.log(newFriendSurvey);
 
