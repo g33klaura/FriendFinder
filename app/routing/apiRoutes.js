@@ -27,6 +27,8 @@ module.exports = function(app) {
   	
     friendsData.push(req.body);
 
+    console.log('req.body= ' + req.body);
+    console.log("------------------------------------");
     // save the req.body to new var
     // forget why.....
     let surveyInputs = req.body;
@@ -34,16 +36,21 @@ module.exports = function(app) {
     // console.log('surveyInputs: ' + surveyInputs);
     // ^^Just is [object Object]....
 
+    for (var t = 0; t < surveyInputs.length; t++) {
+      
+      console.log(surveyInputs[t]);
+      console.log("------------------------------------");
+    }
 
-  	// Will friend matching happen here?????? ~YES
-    // Needs to compare newly entered scores with exisiting friends scores
-
-    // Math.abs() to the rescue!
 
     console.log('compareFriends called from apiRoutes');  //This gets triggered
 
     compareFriends();
-    
+
+    // Will friend matching happen here?????? ~YES
+    // Needs to compare newly entered scores with exisiting friends scores
+
+    // Math.abs() to the rescue!
 
   });
 };
@@ -54,6 +61,7 @@ module.exports = function(app) {
 
 function compareFriends() {
 
+  // Loop through friends.js except for the one that's just been added
   for (var i = 0; i < (friendsData.length -1); i++) {
     
     console.log("------------------------------------");
@@ -63,5 +71,8 @@ function compareFriends() {
     console.log(friendsData[i].name);
     console.log(friendsData[i].scores);
   }
+
+  // console.log(surveyInputs);
+  // undefined :(
 
 }
