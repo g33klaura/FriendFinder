@@ -70,9 +70,16 @@ function compareFriends() {
 
   console.log("------------------------------------");
   // Thing I found online...
-  // Returns empty array
-  diff = friendZero.filter(x => newFriendInt.indexOf(x) < 0);
+  // I have NOOOOO idea what numbers it's logging tho.... :(
+  // Tried !== 0, < 0, > 0, no argument
+  // var diff = friendZero.filter(x => newFriendInt.indexOf(x) < 0);
+    // console.log(diff);
 
-  console.log(diff);
+  // var matchFriendZero = Math.abs(friendZero - newFriendInt);
+    // console.log(matchFriendZero);  //NaN
+
+    friendZero.forEach(function(element) {
+      console.log(element);
+    })
 
 }
