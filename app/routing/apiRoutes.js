@@ -1,10 +1,12 @@
 // API Routes for FriendFinder App
 
-// REQUIREMENTS ========================================
+// REQUIREMENTS & VARIABLES =======================
 // 
 
 let friendsData = require('../data/friends.js');
 const path = require('path');
+
+let totalDifference = 0;
 
 
 // ROUTING ========================================
@@ -78,8 +80,12 @@ function compareFriends() {
   // var matchFriendZero = Math.abs(friendZero - newFriendInt);
     // console.log(matchFriendZero);  //NaN
 
-    friendZero.forEach(function(element) {
-      console.log(element);
+    friendZero.forEach(function(benderElement) {
+      console.log(benderElement);
+    })
+
+    newFriendInt.forEach(function(userElement) {
+      console.log(userElement);
     })
 
 }
