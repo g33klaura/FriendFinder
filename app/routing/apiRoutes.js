@@ -48,15 +48,21 @@ function compareFriends() {
   // Loop through friends.js except for the one that's just been added
   for (var i = 0; i < (friendsData.length -1); i++) {
     
-    console.log("------------------------------------");
+    // console.log("------------------------------------");
     // console.log('friendsData in compareFriends()');
     // console.log(friendsData[i]);
     // ^^See if this gets in there... ~YES
-    console.log(friendsData[i].name);
-    console.log(friendsData[i].scores);
+    // console.log(friendsData[i].name);
+    // console.log(friendsData[i].scores);
   }
 
-  // console.log(surveyInputs);
-  // undefined :(
+  // Survey inputs should always be at index [5]...
+  // Try comparing just index [0] to [5]
+  var friendZero = friendsData[0].scores;
+    console.log(friendZero);
+
+  var newFriend = parseInt(friendsData[5].scores);
+    console.log(newFriend);
+    // does parseInt work here????
 
 }
