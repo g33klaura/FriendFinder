@@ -61,8 +61,18 @@ function compareFriends() {
   var friendZero = friendsData[0].scores;
     console.log(friendZero);
 
-  var newFriend = parseInt(friendsData[5].scores);
-    console.log(newFriend);
-    // does parseInt work here????
+  var newFriend = friendsData[5].scores;
+    // console.log(newFriend);
+
+  // OMG THEY'RE INTEGERS!!!!!!! *confetti*
+  var newFriendInt = newFriend.map(Number);
+    console.log(newFriendInt);
+
+  console.log("------------------------------------");
+  // Thing I found online...
+  // Returns empty array
+  diff = friendZero.filter(x => newFriendInt.indexOf(x) < 0);
+
+  console.log(diff);
 
 }
