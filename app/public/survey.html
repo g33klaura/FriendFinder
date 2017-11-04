@@ -305,6 +305,7 @@
       		]
       	};
 
+      	console.log('User inputs from survey:');
       	console.log(newFriendSurvey);
 
       	// 2nd attempt
@@ -323,16 +324,15 @@
         		console.log("URL: " + currentURL + "/api/friends");
         		console.log("------------------------------------");
       		
-        		console.log(friendsData);
-        		console.log("------------------------------------");
-
-        		// See if this works so far
-        		// Continues line 92 in tables.html
-        		// ##################################
-        		// compareFriends();
-        		// console.log('compareFriends called from survey.html');
-        		// ^^To call function from apiRoutes.js???
-        		// Doesn't get triggered, but form data does log
+        		// console.log(friendsData);
+        		
+        		// Loop through array of all friends displaying name and scores array
+					  for (var i = 0; i < friendsData.length; i++) {
+					    
+					    console.log("------------------------------------");
+					    console.log(friendsData[i].name);
+					    console.log(friendsData[i].scores);
+  					}
       		});
       	}
 

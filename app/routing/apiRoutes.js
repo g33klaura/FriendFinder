@@ -22,26 +22,10 @@ module.exports = function(app) {
   });
 
 
-  // API POST Requests
+  // API POST Request
   app.post('/api/friends', function(req, res) {
   	
     friendsData.push(req.body);
-
-    console.log('req.body= ' + req.body);
-    console.log("------------------------------------");
-    // save the req.body to new var
-    // forget why.....
-    let surveyInputs = req.body;
-
-    // console.log('surveyInputs: ' + surveyInputs);
-    // ^^Just is [object Object]....
-
-    for (var t = 0; t < surveyInputs.length; t++) {
-      
-      console.log(surveyInputs[t]);
-      console.log("------------------------------------");
-    }
-
 
     console.log('compareFriends called from apiRoutes');  //This gets triggered
 
