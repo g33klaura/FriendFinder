@@ -47,4 +47,5 @@ require('./app/routing/htmlRoutes.js')(app);
 // 'Starts' the server  ~WORKS
 app.listen(PORT, function() {
 	console.log('App listening on PORT: ' + PORT);
+	console.log("------------------------------------");
 });
