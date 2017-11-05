@@ -1,14 +1,4 @@
 // JavaScript for FuturamaFriendFinder
-/*
-Steps to complete:
-[] Start server by running node server.js
-[] htmlRoutes.js
-[] apiRoutes.js
-[] Save app data in friends.js as array of objects
-[] Closest friend match is number with lease difference (so, lowest number?)
-[] Modal pop-up displaying resulting friend match (name & picture)
-[] Update readme
-*/
 
 
 // DEPENDENCIES ========================================
