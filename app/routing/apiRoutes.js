@@ -6,6 +6,7 @@
 let friendsData = require('../data/friends.js');
 const path = require('path');
 
+// Will later hold difference between friendsArray friends and user's survey responses
 let totalDifference;
 
 
@@ -28,31 +29,29 @@ module.exports = function(app) {
   app.post('/api/friends', function(req, res) {
   	
     // friendsData.push(req.body);
+
+    // Save user's survey inputs to new vars
     var userData = req.body;
     var userScores = userData.scores;
-    var userScoresInt = userScores.map(Number)
+    var userScoresInt = userScores.map(Number)  //Converts scores strings to integers
 
-    console.log('compareFriends called from apiRoutes');  //This gets triggered
+    // console.log('compareFriends called from apiRoutes');
 
-    // compareFriends();
-
-    // Loop through friends.js except for the one that's just been added
+    // Loop through friends.js 
     for (var i = 0; i < (friendsData.length); i++) {
     
-    var currentFriend = friendsData[i];
-    totalDifference = 0;
+      // Saves each friend's data to new var so can grab just name and scores
+      var currentFriend = friendsData[i];
+      
+      // Sets totalDiff to 0 when looping through each friend
+      totalDifference = 0;
 
-    console.log(currentFriend.name);    
+      console.log(currentFriend.name);
 
-    
+      // Will need photo link
+      // console.log(currentFriend.photo);
 
-    // console.log("------------------------------------");
-    // console.log('friendsData in compareFriends()');
-    // console.log(friendsData[i]);
-    // ^^See if this gets in there... ~YES
-    // console.log(friendsData[i].name);
-    // console.log(friendsData[i].scores);
-  
+      // SECOND loop through just the scores of one friend at a time
       for (var j = 0; j < currentFriend.scores.length; j++) {
         
         var currentFriendScore = currentFriend.scores[j];
@@ -60,20 +59,29 @@ module.exports = function(app) {
         var currentUserScores = userScoresInt[j];
           // console.log('Current User Scores: ' + currentUserScores);
  
+        // FINALLY, the total difference btwn each friend and the user's scores
         totalDifference += Math.abs(currentUserScores - currentFriendScore);
 
-        // console.log(totalDifference);
+        // console.log(totalDifference);  ~don't put in this loop
 
       }
 
-      // totalDifference += Math.abs(currentUserScores - currentFriendScore);
-
+      // Lowest number of total differnce should be match
       console.log(totalDifference);
+      console.log("------------------------------------");
 
-  }
-  // ^^Closes overall for loop
 
-  });
+      // Finding a match ============================  ~Nope...
+      // let Friends = [];
+
+      // let friend = currentFriend.name;
+
+      // Friends.push({friend: totalDifference});
+      //   console.log(Friends);
+
+    }  // Closes overall for loop
+
+  });  // Closes post request
 };
 
 
@@ -81,9 +89,7 @@ module.exports = function(app) {
 // 
 
 
-
-
-
+// Everything I worked on before getting help with the loop-in-loop....
 
   // Survey inputs should always be at index [5]...
   // Try comparing just index [0] to [5]
