@@ -226,9 +226,8 @@
   								</button>
   								<!-- For MODAL : there is a step to activate a trigger in the Materialize docs -->
 									
-									<!-- NEED TO FIX COLOR -->
 									<!-- Home button -->
-									<a class="waves-effect waves-light btn green accent-3 z-depth-4 z-depth-4" href="/"><i class="medium material-icons">home</i></a>
+									<a class="waves-effect waves-light btn light-blue accent-3 z-depth-4 z-depth-4" href="/"><i class="medium material-icons">home</i></a>
 
 								</div>
 							</div>
@@ -305,7 +304,7 @@
       		]
       	};
 
-      	console.log('User inputs from survey:');
+      	console.log('New friend object from user survey:');
       	console.log(newFriendSurvey);
 
       	// 2nd attempt
@@ -320,52 +319,37 @@
 
       		$.ajax({ url: currentURL + '/api/friends', method: 'GET' })
       		.done(function(friendsData) {
-      			console.log("------------------------------------");
+      			console.log('------------------------------------');
         		console.log("URL: " + currentURL + "/api/friends");
-        		console.log("------------------------------------");
-      		
+        		console.log('------------------------------------');
+        		console.log('Hey Patrick or Ronny! Sooo, the totalDifference numbers will show up in command-line. I\'m still working out selecting the lowest number to make the match. But you should be able to see the Futurama friend name and the total difference btwn the user\'s scores below the name. Thaaaanks! :)');
+
         		// console.log(friendsData);
         		
-        		// Loop through array of all friends displaying name and scores array
-					  for (var i = 0; i < friendsData.length; i++) {
+        		// Loop through array of all friends displaying name and scores array ~this doesn't need to happen here, was only for testing
+					  // for (var i = 0; i < friendsData.length; i++) {
 					    
-					    console.log("------------------------------------");
-					    console.log(friendsData[i].name);
-					    console.log(friendsData[i].scores);
-  					}
+					  //   console.log("------------------------------------");
+					  //   console.log(friendsData[i].name);
+					  //   console.log(friendsData[i].scores);
+  					// }
       		});
-      	}
+      	}  //Closes runFriendQuery
 
 
-      	// 1st attempt
-      	// POST Request as grabbed by jQuery ==========================
-      	// Linked code in apiRoutes.js**
-      	// SHould this actually be happening in the API Routes file... if so, how is this triggered with the survey submit??******
-
-      	// $.post('/api/friends', newFriendSurvey, function(data) {
-      		// jQuery docs say to set callback as (data)...
-      		
-      		// if (data) {
-      		// 	alert('Survey logged successfully');  //Haven't seen this message yet
-      			// Will modal trigger here?
-      		// } else {
-      			// alert('Data unsuccessful');  //Right?
-      		// }
-	      	// Clear won't work in this block; keep below
-      	// });
-
-      // Clear Survey ==========================
+      	// Clear Survey ===============================================
 	      	$('input').val('');
 
 	      	select.prop('selectedIndex', 0);
 	      	select.material_select();
-			});
+			}); //Closes on-click
 
 			// select.material_select();
 			// ^^Still clears w/o this on... don't get $.post alerts
 
 
-			// Modal initialization ***Not sure if this'll go in the on-click of submit********
+			// Modal initialization 
+			// ********Not sure if this'll go in the on-click of submit********
 			// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     	$('.modal').modal();
 
