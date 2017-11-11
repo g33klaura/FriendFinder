@@ -1,14 +1,30 @@
-# FriendFinder
-Answer a few simple questions and be paired with a friend, based on compatibility
+<!-- Application Name -->
+<h1 align="center">FriendFinder</h1>
+
+<!-- App Description -->
+<div align="center">Answer a few simple questions and be paired with a friend, based on compatibility</div>
 
 
-## Technologies
+## Technologies Used
+Express, API Routing, JavaScript, jQuery, Materialize CSS
 
 
+### Deployed Link
+[Heroku] https://morning-shelf-62146.herokuapp.com/
 
 
+<!-- ### Key Features
+*  -->
+### Screenshots
+![Start Screen](screenshots/FriendFinder_screen1.png)
+###### Image caption
+
+![Survey Screen](screenshots/FriendFinder_screen.png)
+###### Survey Screen
 
 
-<!-- Backgrounds -->
-<!-- http://www.casinosyfurcias.com/files/futurama-spot-light.jpg -->
-<!-- https://vignette.wikia.nocookie.net/en.futurama/images/4/4c/FUTURAMA-BACKGROUND-small.jpg/revision/latest?cb=20160812075819 -->
+### Application Process
+* Click the survey button to begin a 10-question survey
+* Begin selecting one answer in each drop-down menu
+* Answers get compared to scores of existing potential friends (the closest match of answers)
+* A modal will render with the user's new friend name and image
