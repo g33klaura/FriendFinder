@@ -16,10 +16,10 @@ Express, API Routing, JavaScript, jQuery, Materialize CSS
 <!-- ### Key Features
 *  -->
 ### Screenshots
-![Start Screen](/screenshots/FriendFinder_screen1.png)
+![Start Screen](screenshots/FriendFinder_screen1.png)
 ###### Image caption
 
-![Survey Screen](/screenshots/FriendFinder_screen.png)
+![Survey Screen](screenshots/FriendFinder_screen.png)
 ###### Survey Screen
 
 
