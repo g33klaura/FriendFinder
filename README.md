@@ -1,30 +1,36 @@
-<!-- Application Name -->
-<h1 align="center">FriendFinder</h1>
+<h1 align="center">FriendFinder: Futurama Edition</h1>
 
-<!-- App Description -->
-<div align="center">Answer a few simple questions and be paired with a friend, based on compatibility</div>
+<div align="center">Compatibility-based matching to find a new friend from the world of Futurama.</div>
 
+## Deployed Application
+
+[Heroku] <https://morning-shelf-62146.herokuapp.com/>
+
+## Concept
+
+Answer a few simple questions and be paired with a friend, based on compatibility
 
 ## Technologies Used
+
 Express, API Routing, JavaScript, jQuery, Materialize CSS
 
+<!-- ## Key Features
 
-### Deployed Link
-[Heroku] https://morning-shelf-62146.herokuapp.com/
+* thing 1 -->
 
-
-<!-- ### Key Features
-*  -->
 ### Screenshots
+
+###### Main Screen
 ![Start Screen](screenshots/FriendFinder_screen1.png)
-###### Image caption
 
-![Survey Screen](screenshots/FriendFinder_screen.png)
 ###### Survey Screen
-
+![Survey Screen](screenshots/FriendFinder_screen.png)
 
 ### Application Process
-* Click the survey button to begin a 10-question survey
-* Begin selecting one answer in each drop-down menu
-* Answers get compared to scores of existing potential friends (the closest match of answers)
-* A modal will render with the user's new friend name and image
+
+1. Click the survey button to begin a 10-question survey
+1. Begin selecting one answer in each drop-down menu
+1. Answers get compared to scores of existing potential friends (the closest match of answers)
+1. A modal will render with the user's new friend name and image
+
+*Happy friending!*
