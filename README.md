@@ -8,7 +8,7 @@
 
 ## Concept
 
-Answer a few simple questions and be paired with a friend, based on compatibility
+Fill out a survey form and be matched with a friend from a list of Futurama characters.
 
 ## Technologies Used
 
@@ -18,19 +18,21 @@ Express, API Routing, JavaScript, jQuery, Materialize CSS
 
 * thing 1 -->
 
-### Screenshots
-
-###### Main Screen
-![Start Screen](screenshots/FriendFinder_screen1.png)
-
-###### Survey Screen
-![Survey Screen](screenshots/FriendFinder_screen.png)
-
 ### Application Process
 
 1. Click the survey button to begin a 10-question survey
 1. Begin selecting one answer in each drop-down menu
-1. Answers get compared to scores of existing potential friends (the closest match of answers)
-1. A modal will render with the user's new friend name and image
+1. Answers get compared to scores of existing potential friends
+1. A modal will render with the name and image of a friend with the lowest number "friendDifference"
+
+### Screenshots
+
+###### Application in action
+
+![Survey Screen](screenshots/ff1.gif)
+
+###### Match results
+
+![Results](screenshots/match-results.png)
 
 *Happy friending!*
