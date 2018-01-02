@@ -221,8 +221,8 @@
 							<div class="row">
 								<div class="col s12">
 									<!-- Submit button -->
-									<!-- For MODAL : added 'modal-trigger' to submit button class -->
-									<button class="btn waves-effect waves-light green accent-3 z-depth-4 modal-trigger" type="submit" name="action" id="submit">Best friend time!
+									<!-- For MODAL : added 'modal-trigger' to submit button class AND data-target of modal id -->
+									<button class="btn waves-effect waves-light green accent-3 z-depth-4 modal-trigger" type="submit" name="action" id="submit" data-target="modal1">Best friend time!
     							<i class="material-icons right">face</i>
   								</button>
 									
@@ -236,6 +236,17 @@
 					</div> <!-- Closes form div -->
 				</div> <!-- Closes section div -->
 				
+					<!-- Modal here -->
+					<!-- modal code from NewsNow project ~ get triggering then edit -->
+					<div class="modal" id="modal1">
+						<div class="modal-content center-align">
+							<h4>I AM MODAL</h4>
+							<!-- <p>Article saved</p> -->
+						</div>
+					</div>
+
+
+
 			</div> <!-- Closes page column -->
 		</div> <!-- Closes page row -->
 	</div> <!-- Closes page container -->
@@ -252,16 +263,8 @@
     </div>
   </footer>
 
-	<!-- Modal here -->
-	<!-- modal code from NewsNow project ~ get triggering then edit -->
-	<div id="modal-saved" class="modal" href="#modal-saved" data-target="#modal-saved">
-    <div class="modal-content center-align">
-      <h4>I AM MODAL</h4>
-      <!-- <p>Article saved</p> -->
-    </div>
-  </div>
 
-	<!-- ========== SCRIPT TAGS ========== -->
+	<!-- ==================== SCRIPT TAGS ==================== -->
 	<!-- Link to jQuery -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -275,6 +278,8 @@
 		
 		$(document).ready(function() {
 
+			$('.modal').modal();
+
 			// Initialize Materialize drop-down menus
     	$('select').material_select();
   	
@@ -284,8 +289,8 @@
   		// Use in clearing form on submit click
     	var select = $('select');
 
-    	// Survey submit button ==========================
-    	// ===============================================
+			// ============================================================
+			// Survey submit button
 			$('#submit').on('click', function(event) {
 				
 				// Prevent page from refreshing
@@ -293,7 +298,7 @@
 
 				// console.log('Submit clicked');
 				
-				$('.modal').modal();
+				// $('.modal').modal();
 
 				// Grabs form elements and sets to new object
 				let userData = {
@@ -330,50 +335,15 @@
 					$('.modal-trigger#modal-saved').modal();
 
 				});
-// } else {
-// alert("Please fill out all fields before submitting!");
-// }
 
-
-				/*
-      	// 2nd attempt
-      	// POST Request as grabbed by jQuery ==========================
-      	$.post('/api/friends', newFriendSurvey);
-
-      	// from tables.html example in 16-HotRestaurant
-      	runFriendQuery();
-
-      	function runFriendQuery() {
-      		let currentURL = window.location.origin;
-
-      		$.ajax({ url: currentURL + '/api/friends', method: 'GET' })
-      		.done(function(friendsData) {
-      			console.log('------------------------------------');
-        		console.log("URL: " + currentURL + "/api/friends");
-        		console.log('------------------------------------');
-        		console.log('Hey Patrick or Ronny! Sooo, the totalDifference numbers will show up in command-line. I\'m still working out selecting the lowest number to make the match. But you should be able to see the Futurama friend name and the total difference btwn the user\'s scores below the name. Thaaaanks! :)');
-
-        		// console.log(friendsData);
-      		});
-      	}  //Closes runFriendQuery
-				*/
-
-      	// Clear Survey ===============================================
+				// ===========================================================
+      	// Clear survey inputs & reset drop-downs
 	      	$('input').val('');
 
 	      	select.prop('selectedIndex', 0);
-	      	select.material_select();
+					select.material_select();
+					
 			}); //Closes on-click
-
-			// select.material_select();
-			// ^^Still clears w/o this on... don't get $.post alerts
-
-
-			// Modal initialization 
-			// ********Not sure if this'll go in the on-click of submit********
-			// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-			// $('.modal').modal();
-			// $('.modal-trigger#modal-saved').modal();
 
 		}); //Closes document on-ready
 
