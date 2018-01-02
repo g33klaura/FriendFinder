@@ -279,7 +279,7 @@
 
     	// Survey submit button ==========================
     	// ===============================================
-			$('#submit').on('click', function() {
+			$('#submit').on('click', function(event) {
 				
 				// Prevent page from refreshing
 				event.preventDefault;
@@ -287,7 +287,7 @@
 				// console.log('Submit clicked');
 				
 				// Grabs form elements and sets to new object
-				let newFriendSurvey = {
+				let userData = {
       		name: $('#name').val().trim(),
       		photo: $('#photo').val().trim(),
       		scores: [
@@ -305,8 +305,27 @@
       	};
 
       	console.log('New friend object from user survey:');
-      	console.log(newFriendSurvey);
+				console.log(userData);
+				
+				// AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) {
 
+					console.log(data);
+
+					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
+					// $("#match-name").text(data.name);
+					// $("#match-img").attr("src", data.photo);
+
+					// Show the modal with the best match
+					// $("#results-modal").modal("toggle");
+
+				});
+// } else {
+// alert("Please fill out all fields before submitting!");
+// }
+
+
+				/*
       	// 2nd attempt
       	// POST Request as grabbed by jQuery ==========================
       	$.post('/api/friends', newFriendSurvey);
@@ -325,17 +344,9 @@
         		console.log('Hey Patrick or Ronny! Sooo, the totalDifference numbers will show up in command-line. I\'m still working out selecting the lowest number to make the match. But you should be able to see the Futurama friend name and the total difference btwn the user\'s scores below the name. Thaaaanks! :)');
 
         		// console.log(friendsData);
-        		
-        		// Loop through array of all friends displaying name and scores array ~this doesn't need to happen here, was only for testing
-					  // for (var i = 0; i < friendsData.length; i++) {
-					    
-					  //   console.log("------------------------------------");
-					  //   console.log(friendsData[i].name);
-					  //   console.log(friendsData[i].scores);
-  					// }
       		});
       	}  //Closes runFriendQuery
-
+				*/
 
       	// Clear Survey ===============================================
 	      	$('input').val('');
