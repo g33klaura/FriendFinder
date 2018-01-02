@@ -237,15 +237,13 @@
 				</div> <!-- Closes section div -->
 				
 					<!-- Modal here -->
-					<!-- modal code from NewsNow project ~ get triggering then edit -->
 					<div class="modal" id="modal1">
 						<div class="modal-content center-align">
-							<h4>I AM MODAL</h4>
+							<h4 id="match-name"></h4>
+							<img id="match-img" src="" alt="">
 							<!-- <p>Article saved</p> -->
 						</div>
 					</div>
-
-
 
 			</div> <!-- Closes page column -->
 		</div> <!-- Closes page row -->
@@ -271,13 +269,11 @@
 	<!-- Materialize compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-	<!-- My JavaScript -->
-	<!-- <script type="text/javascript" src="assets/javascript/app.js"></script> -->
-
 	<script type="text/javascript">
 		
 		$(document).ready(function() {
 
+			// Initialize Materialize modals
 			$('.modal').modal();
 
 			// Initialize Materialize drop-down menus
@@ -297,8 +293,6 @@
 				event.preventDefault;
 
 				// console.log('Submit clicked');
-				
-				// $('.modal').modal();
 
 				// Grabs form elements and sets to new object
 				let userData = {
@@ -322,24 +316,23 @@
 				console.log(userData);
 				
 				// AJAX post the data to the friends API.
-        $.post("/api/friends", userData, function(data) {
+        $.post('/api/friends', userData, function(data) {
 
 					console.log(data);
 
 					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
-					// $("#match-name").text(data.name);
-					// $("#match-img").attr("src", data.photo);
+					$('#match-name').text(data.name);
+					$('#match-img').attr('src', data.photo);
 
 					// Show the modal with the best match
 					// $("#results-modal").modal("toggle");
-					$('.modal-trigger#modal-saved').modal();
+					// $('.modal-trigger#modal-saved').modal();
 
 				});
 
 				// ===========================================================
       	// Clear survey inputs & reset drop-downs
 	      	$('input').val('');
-
 	      	select.prop('selectedIndex', 0);
 					select.material_select();
 					
