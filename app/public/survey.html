@@ -221,14 +221,13 @@
 							<div class="row">
 								<div class="col s12">
 									<!-- Submit button -->
-									<button class="btn waves-effect waves-light green accent-3 z-depth-4" type="submit" name="action" id="submit">Best friend time!
+									<!-- For MODAL : added 'modal-trigger' to submit button class -->
+									<button class="btn waves-effect waves-light green accent-3 z-depth-4 modal-trigger" type="submit" name="action" id="submit">Best friend time!
     							<i class="material-icons right">face</i>
   								</button>
-  								<!-- For MODAL : there is a step to activate a trigger in the Materialize docs -->
 									
 									<!-- Home button -->
 									<a class="waves-effect waves-light btn light-blue accent-3 z-depth-4 z-depth-4" href="/"><i class="medium material-icons">home</i></a>
-
 								</div>
 							</div>
 						</div> <!-- Column div the whole form is in -->
@@ -253,6 +252,14 @@
     </div>
   </footer>
 
+	<!-- Modal here -->
+	<!-- modal code from NewsNow project ~ get triggering then edit -->
+	<div id="modal-saved" class="modal" href="#modal-saved" data-target="#modal-saved">
+    <div class="modal-content center-align">
+      <h4>I AM MODAL</h4>
+      <!-- <p>Article saved</p> -->
+    </div>
+  </div>
 
 	<!-- ========== SCRIPT TAGS ========== -->
 	<!-- Link to jQuery -->
@@ -286,6 +293,8 @@
 
 				// console.log('Submit clicked');
 				
+				$('.modal').modal();
+
 				// Grabs form elements and sets to new object
 				let userData = {
       		name: $('#name').val().trim(),
@@ -318,6 +327,7 @@
 
 					// Show the modal with the best match
 					// $("#results-modal").modal("toggle");
+					$('.modal-trigger#modal-saved').modal();
 
 				});
 // } else {
@@ -362,7 +372,8 @@
 			// Modal initialization 
 			// ********Not sure if this'll go in the on-click of submit********
 			// the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
-    	$('.modal').modal();
+			// $('.modal').modal();
+			// $('.modal-trigger#modal-saved').modal();
 
 		}); //Closes document on-ready
 
