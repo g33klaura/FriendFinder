@@ -1,7 +1,7 @@
 // API Routes for FriendFinder App
 
-// REQUIREMENTS & VARIABLES =======================
-// 
+// REQUIREMENTS & VARIABLES
+// ============================================================ 
 
 let friendsData = require('../data/friends.js');
 const path = require('path');
@@ -10,8 +10,8 @@ const path = require('path');
 let totalDifference;
 
 
-// ROUTING ========================================
-//
+// ROUTING
+// ============================================================
 
 module.exports = function(app) {
 	
@@ -30,10 +30,18 @@ module.exports = function(app) {
   	
     // friendsData.push(req.body);
 
+    // Use this object to hold "best match" of friends
+    // Will constantly update as look through all friend options
+    var bestMatch = {
+      name: "",
+      photo: "",
+      friendDifference: Infinity
+    }
+
     // Save user's survey inputs to new vars
     var userData = req.body;
     var userScores = userData.scores;
-    var userScoresInt = userScores.map(Number)  //Converts scores strings to integers
+    // var userScoresInt = userScores.map(Number)  //Converts scores strings to integers
 
     // console.log('compareFriends called from apiRoutes');
 
@@ -56,20 +64,28 @@ module.exports = function(app) {
         
         var currentFriendScore = currentFriend.scores[j];
 
-        var currentUserScores = userScoresInt[j];
+        // var currentUserScores = userScoresInt[j];
+        var currentUserScores = userScores[j];
           // console.log('Current User Scores: ' + currentUserScores);
  
         // FINALLY, the total difference btwn each friend and the user's scores
-        totalDifference += Math.abs(currentUserScores - currentFriendScore);
+        // totalDifference += Math.abs(currentUserScores - currentFriendScore);
+        totalDifference += Math.abs(parseInt(currentUserScores) - parseInt(currentFriendScore));
 
-        // console.log(totalDifference);  ~don't put in this loop
-
+          // console.log(totalDifference);  ~don't put in this loop
       }
 
       // Lowest number of total differnce should be match
       console.log(totalDifference);
       console.log("------------------------------------");
 
+      // If the sum of differences is less then the differences of the current "best match"
+      if (totalDifference <= bestMatch.friendDifference) {
+        // Reset the bestMatch to be the new friend.
+        bestMatch.name = currentFriend.name;
+        bestMatch.photo = currentFriend.photo;
+        bestMatch.friendDifference = totalDifference;
+      }
 
       // Finding a match ============================  ~Nope...
       // let Friends = [];
@@ -81,12 +97,22 @@ module.exports = function(app) {
 
     }  // Closes overall for loop
 
+    // Finally save the user's data to the database (this has to happen AFTER the check. otherwise,
+    // the database will always return that the user is the user's best friend).
+    friendsData.push(userData);
+      // Or does this need to be friendsArray?
+
+    // Return a JSON with the user's bestMatch. This will be used by the HTML in the next page
+    res.json(bestMatch);
+
+    console.log(bestMatch);
+
   });  // Closes post request
 };
 
 
-// FUNCTIONS ========================================
-// 
+// FUNCTIONS
+// ============================================================
 
 
 // Everything I worked on before getting help with the loop-in-loop....
