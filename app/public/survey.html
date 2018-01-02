@@ -3,9 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FriendFinder Survey</title>
-    
-	<!-- Google Fonts -->
+  <title>FriendFinder Survey</title>
 
 	<!-- Materialize Glyphs Stylesheet -->
 	<link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -15,10 +13,10 @@
 
 	<style type="text/css">
 		html {
-			background: url('https://vignette.wikia.nocookie.net/en.futurama/images/4/4c/FUTURAMA-BACKGROUND-small.jpg/revision/latest?cb=20160812075819') no-repeat center center fixed;
-			-webkit-background-size: cover;
-  		-moz-background-size: cover;
-  		-o-background-size: cover;
+			background: url('http://wallpaperpulse.com/thumb/2861248.jpg') no-repeat center center fixed;
+				-webkit-background-size: cover;
+  			-moz-background-size: cover;
+  			-o-background-size: cover;
   		background-size: cover;
 		}
 		h1 {
@@ -27,16 +25,12 @@
 		h5, h6 {
 			color: white;
 		}
-		/*footer {
-			float: right;
-		}*/
 	</style>
 
 </head>
 <body>
 
 	<!-- This page will hold survey elements then POST user inputs -->
-
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
@@ -78,7 +72,6 @@
 							      <option value="4">Wet blanket</option>
 							      <option value="5">Astrophysicist</option>
 							    </select>
-							    <!-- <label>Question 1</label> -->
 							  </div>
 							</div>
 
@@ -93,7 +86,6 @@
 							      <option value="4">Anything really</option>
 							      <option value="5">Forget food, I love alcohol!</option>
 							    </select>
-							    <!-- <label>Question 2</label> -->
 							  </div>
 							</div>
 
@@ -108,7 +100,6 @@
 							      <option value="4">Doohan 6</option>
 							      <option value="5">Eternium</option>
 							    </select>
-							    <!-- <label>Question 3</label> -->
 							  </div>
 							</div>
 
@@ -123,7 +114,6 @@
 							      <option value="4">Hair</option>
 							      <option value="5">Giant head</option>
 							    </select>
-							    <!-- <label>Question 4</label> -->
 							  </div>
 							</div>
 
@@ -138,7 +128,6 @@
 							      <option value="4">Drinking</option>
 							      <option value="5">Singing karaoke</option>
 							    </select>
-							    <!-- <label>Question 5</label> -->
 							  </div>
 							</div>
 
@@ -153,7 +142,6 @@
 							      <option value="4">With knowledge</option>
 							      <option value="5">With surgery</option>
 							    </select>
-							    <!-- <label>Question 6</label> -->
 							  </div>
 							</div>
 
@@ -168,7 +156,6 @@
 							      <option value="4">Baby Geniuses</option>
 							      <option value="5">Milo &amp; Otis</option>
 							    </select>
-							    <!-- <label>Question 7</label> -->
 							  </div>
 							</div>
 
@@ -183,7 +170,6 @@
 							      <option value="4">Dr. Nick Riviera</option>
 							      <option value="5">Santa&apos;s Little Helper</option>
 							    </select>
-							    <!-- <label>Question 8</label> -->
 							  </div>
 							</div>
 
@@ -198,7 +184,6 @@
 							      <option value="4">A human</option>
 							      <option value="5">A slinky</option>
 							    </select>
-							    <!-- <label>Question 9</label> -->
 							  </div>
 							</div>
 
@@ -213,7 +198,6 @@
 							      <option value="4">Moog synth</option>
 							      <option value="5">Audio books</option>
 							    </select>
-							    <!-- <label>Question 10</label> -->
 							  </div>
 							</div>
 							<!-- Ends question dropdowns -->
@@ -221,7 +205,7 @@
 							<div class="row">
 								<div class="col s12">
 									<!-- Submit button -->
-									<!-- For MODAL : added 'modal-trigger' to submit button class AND data-target of modal id -->
+									<!-- For modal: added 'modal-trigger' to button class AND data-target of modal id -->
 									<button class="btn waves-effect waves-light green accent-3 z-depth-4 modal-trigger" type="submit" name="action" id="submit" data-target="modal1">Best friend time!
     							<i class="material-icons right">face</i>
   								</button>
@@ -239,16 +223,16 @@
 					<!-- Modal here -->
 					<div class="modal" id="modal1">
 						<div class="modal-content center-align">
+							<h2>Good news!</h2>
+							<h3>Your new best friend is:</h3>
 							<h4 id="match-name"></h4>
-							<img id="match-img" src="" alt="">
-							<!-- <p>Article saved</p> -->
+							<img id="match-img" src="" alt="" width="50%">
 						</div>
 					</div>
 
 			</div> <!-- Closes page column -->
 		</div> <!-- Closes page row -->
 	</div> <!-- Closes page container -->
-
 
 	<!-- Simple footer -->
 	<footer class="footer">
@@ -312,21 +296,20 @@
       		]
       	};
 
-      	console.log('New friend object from user survey:');
-				console.log(userData);
+      	// console.log('New friend object from user survey:');
+				// console.log(userData);
 				
 				// AJAX post the data to the friends API.
         $.post('/api/friends', userData, function(data) {
 
-					console.log(data);
+					// console.log(data);
 
 					// Grab the result from the AJAX post so that the best match's name and photo are displayed.
 					$('#match-name').text(data.name);
-					$('#match-img').attr('src', data.photo);
-
-					// Show the modal with the best match
-					// $("#results-modal").modal("toggle");
-					// $('.modal-trigger#modal-saved').modal();
+					$('#match-img').attr({
+						'src': data.photo,
+						'alt': data.name
+					});
 
 				});
 
