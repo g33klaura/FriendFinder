@@ -4,7 +4,7 @@
 let friendsArray = [
   {
     name: 'Bender Bending Rodriguez',
-    photo: 'https://uproxx.files.wordpress.com/2015/12/bender-futurama.jpg?quality=100&w=650',
+    photo: 'https://uproxx.files.wordpress.com/2015/12/bender-futurama.jpg',
     scores: [
       1,
       5,
@@ -20,7 +20,7 @@ let friendsArray = [
   },
   {
     name: 'Dr. John A. Zoidberg',
-    photo: 'https://uproxx.files.wordpress.com/2014/10/zoidberg.jpg?quality=100&w=650',
+    photo: 'https://uproxx.files.wordpress.com/2014/10/zoidberg.jpg',
     scores: [
       2,
       1,
@@ -36,8 +36,7 @@ let friendsArray = [
   },
   {
     name: 'Kif Kroker',
-    photo: 'https://iparallax.files.wordpress.com/2013/12/futurama_kif_kroker.png?quality=100&width=650',
-    // Added quality and width after the fact ~ not sure if it works ~Does NOT work. Image is mega huge.
+    photo: 'https://iparallax.files.wordpress.com/2013/12/futurama_kif_kroker.png',
     scores: [
       4,
       3,
